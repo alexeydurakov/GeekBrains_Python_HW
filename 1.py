@@ -77,12 +77,12 @@ print(new_max)
 revenue = float(input("Введите выручку предприятия: "))
 costs = float(input("Введите издержки предприятия: "))
 
-if revenue > costs:
-    profitability = revenue / costs * 100
+if (revenue - costs) > costs:
+    profitability = (revenue - costs) / costs * 100
     print(f"Предприятие получило прибыль, рентабельность составила {profitability:.2f}%")
     employees = int(input("Количество работников: "))
-    print(f"Прибыль предприятия в расчете на одного сотрудника составила {revenue / employees:.2f}")
-elif revenue < costs:
+    print(f"Прибыль предприятия в расчете на одного сотрудника составила {(revenue - costs) / employees:.2f}")
+elif (revenue - costs) < costs:
     print("Предприятие получило убыток")
 else:
     print("Предприятие не прибылное и безубыточное")
